@@ -1,0 +1,42 @@
+{
+  "name": "jquery-learning",
+  "version": "0.0.1",
+  "description": "Some demos for learning jquery",
+  "author": {
+    "name": "zzy",
+    "email": "witzzy@163.com"
+  },
+  "homepage": "https://github.com/sgzzy/jQuery-learning",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgzzy/jQuery-learning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sgzzy/jQuery-learning/issues",
+    "email": "witzzy@163.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "cmd",
+    "css",
+    "concat",
+    "commonjs",
+    "transport",
+    "gulpplugin",
+    "jsPractice"
+  ],
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "pedding": "^1.1.0",
+    "chokidar": "^1.6.1",
+    "cssnano": "^3.8.0",
+    "uglify-js": "^2.7.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-cmd": "https://github.com/nuintun/gulp-cmd/archive/master.tar.gz",
+    "gulp-css": "https://github.com/nuintun/gulp-css/archive/master.tar.gz",
+    "switch-stream": "https://github.com/nuintun/switch-stream/archive/master.tar.gz"
+  },
+  "readmeFilename": "README.md"
+}

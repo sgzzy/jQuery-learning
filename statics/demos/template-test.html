@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>basic-demo</title>
+    <link rel="stylesheet" type="text/css" href="../../statics/product/css/base/base.css">
+    <link rel="stylesheet" href="../../statics/product/css/view/first.css">
+    <script type="text/javascript" src="../../statics/product/loader/sea.js"></script>
+    <script type="text/javascript">
+      seajs.config({ base: '../../statics/product/js' });
+      seajs.use('../../statics/product/js/view/template');
+    </script>
+  </head>
+
+  <body>
+    <div id="content"></div>
+    <script id="test" type="text/html">
+      {{if isAdmin}}
+
+      <h1>{{title}}</h1>
+      <ul>
+        {{each list as value i}}
+        <li>索引 {{i + 1}} ：{{value}}</li>
+        {{/each}}
+      </ul>
+
+      {{/if}}
+    </script>
+
+    <script>
+      var data = {
+        title: '基本例子',
+        isAdmin: true,
+        list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+      };
+      var html = template('test', data);
+      document.getElementById('content').innerHTML = html;
+    </script>
+  </body>
+</html>
