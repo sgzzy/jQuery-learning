@@ -2,11 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <title>IScroll Demonstration Page</title>
+    <link rel="stylesheet" type="text/css" href="../../statics/product/css/base/base.css">
+    <link rel="stylesheet" href="../../statics/product/css/view/iscroll.css">
+    <script type="text/javascript" src="../../statics/product/loader/sea.js"></script>
+    <script type="text/javascript">
+      seajs.config({ base: '../../statics/product/js' });
+      seajs.use('../../statics/product/js/view/iscroll');
+    </script>
   </head>
   <body>
+    <div id="header">iScroll</div>
     <div id="wrapper">
-      <div class="scroller">
         <ul id="ui-list">
           <li class="ui-list-item">A A A A A 1</li>
           <li class="ui-list-item">A A A A A 2</li>
@@ -19,10 +27,8 @@
           <li class="ui-list-item">A A A A A 9</li>
           <li class="ui-list-item">A A A A A 10</li>
           <li class="ui-list-item">A A A A A 11</li>
-          <li class="ui-list-item">A A A A A 12</li>
-          <li class="ui-list-item">A A A A A 13</li>
         </ul>
       </div>
-    </div>
+    <div id="footer"></div>
   </body>
 </html>

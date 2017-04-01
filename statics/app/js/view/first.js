@@ -3,8 +3,8 @@
  */
 var $ = require('jquery');
 var Template = require('template');
-var htmlInner = $('body').html();
-// console.log(Template.escapeHTML(htmlInner));
+var htmlInner = document.body.innerHTML;
+console.log(htmlInner);
 var data = {
   labelledby: 'dialog-title',
   title: {

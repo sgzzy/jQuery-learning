@@ -30,10 +30,11 @@ var switchStream = require('switch-stream');
 var alias = {
   'import-style': 'util/import-style/1.0.0/import-style',
   'pull-refresher': 'util/pull-refresher/1.0.0/pull-refresher',
+  'pull': 'util/mPull/1.0.0/mPull',
   'jquery': 'base/jquery/1.11.3/jquery',
   'utils': 'common/utils/1.0.0/utils',
-  'template': 'common/template/1.0.0/template-debug',
-  'iscroll': 'common/iscroll/5.2.0/iscroll'
+  'template': 'common/template/1.0.0/template',
+  'iscroll': 'common/iscroll/5.2.0/iscroll-probe'
 };
 // bookmark
 var bookmark = Date.now();

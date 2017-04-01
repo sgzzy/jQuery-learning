@@ -174,22 +174,22 @@ function jQuery(window, noGlobal){
 
     for (; i < length; i++) {
       // Only deal with non-null/undefined values
-      if ((options = arguments[i]) != null) {
+      if ((options = arguments[i]) != null) { // options == target
         // Extend the base object
         for (name in options) {
-          src = target[name];
-          copy = options[name];
+          src = target[name]; // src为被扩展类属性
+          copy = options[name]; // copy为扩展类属性
 
           // Prevent never-ending loop
           if (target === copy) {
             continue;
           }
 
-          // Recurse if we're merging plain objects or arrays
+          // Recurse if we're merging plain objects or arrays 若遇到普通类和数组则递归扩展
           if (deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) )) {
             if (copyIsArray) {
               copyIsArray = false;
-              clone = src && jQuery.isArray(src) ? src : [];
+              clone = src && jQuery.isArray(src) ? src : []; // clone为被扩展类准备的扩展项
 
             } else {
               clone = src && jQuery.isPlainObject(src) ? src : {};

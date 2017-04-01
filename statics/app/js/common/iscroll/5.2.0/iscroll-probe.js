@@ -370,6 +370,10 @@ function IScroll (el, options) {
 	this.directionY = 0;
 	this._events = {};
 
+  //todo 新增 用于控制回弹定位的高度
+  this.minScrollX = 0;
+  this.minScrollY = 0;
+
 // INSERT POINT: DEFAULTS
 
 	this._init();
@@ -697,15 +701,15 @@ IScroll.prototype = {
 		time = time || 0;
 
 		if ( !this.hasHorizontalScroll || this.x > 0 ) {
-			x = 0;
-		} else if ( this.x < this.maxScrollX ) {
-			x = this.maxScrollX;
-		}
+      x = this.minScrollX; // todo 0修改而成
+    } else if ( this.x < this.maxScrollX ) {
+      x = this.maxScrollX - this.minScrollX; // todo 修改了 -this.minScrollX
+    }
 
 		if ( !this.hasVerticalScroll || this.y > 0 ) {
-			y = 0;
+      y = this.minScrollY; // todo 0修改而成
 		} else if ( this.y < this.maxScrollY ) {
-			y = this.maxScrollY;
+      y = this.maxScrollY - this.minScrollY; // todo 修改了 -this.minScrollY
 		}
 
 		if ( x == this.x && y == this.y ) {
@@ -738,6 +742,10 @@ IScroll.prototype = {
 
 		this.maxScrollX		= this.wrapperWidth - this.scrollerWidth;
 		this.maxScrollY		= this.wrapperHeight - this.scrollerHeight;
+
+    //todo   新增
+    this.minScrollX = 0;
+    this.minScrollY = 0;
 
 /* REPLACE END: refresh */
 
@@ -1598,7 +1606,7 @@ IScroll.prototype = {
 			if ( now >= destTime ) {
 				that.isAnimating = false;
 				that._translate(destX, destY);
-				
+
 				if ( !that.resetPosition(that.options.bounceTime) ) {
 					that._execEvent('scrollEnd');
 				}
