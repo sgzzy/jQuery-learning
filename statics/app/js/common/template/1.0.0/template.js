@@ -67,7 +67,6 @@ exports.template = function (view, data){
     "throw 'TemplateError: ' + e + ' (at ' + ' line ' + " + context + ".line + ')';\n}";
   // 模板渲染引擎
   var stringify = new Function(code.replace(new RegExp("\n" + context + "\.output \+= '';\n", 'g'), '\n'));
-  console.log(stringify);
   /**
    * render
    *
